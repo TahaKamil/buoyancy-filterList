@@ -1,4 +1,19 @@
 {
+	"customRules": {
+		"indeed": {
+			"scrollPage": ["Indeed Scroll Page | Remove '- job post'", "Indeed Scroll Page | Find Url"]
+		},
+		"simplyhired": {
+			"searchScrollPage": ["Simplyhired Search Scroll Page | Find Url"],
+			"scrollPage": ["Simplyhired Home Scroll Page | Find Url"]
+		},
+		"monster": {
+			"scrollPage": ["Monster Scroll Page | Find Url"]
+		},
+		"google": {
+			"scrollPage": ["Google Jobs | Job Location and Company Name Fix"]
+		}
+	},
 	"filters": {
 		"indeed": {
 			"viewjobPage": {

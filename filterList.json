@@ -1,0 +1,123 @@
+{
+	"customRules": {
+		"indeed": {
+			"scrollPage": ["Indeed Scroll Page | Remove '- job post'", "Indeed Scroll Page | Find Url"]
+		},
+		"simplyhired": {
+			"searchScrollPage": ["Simplyhired Search Scroll Page | Find Url"],
+			"scrollPage": ["Simplyhired Home Scroll Page | Find Url"]
+		},
+		"monster": {
+			"scrollPage": ["Monster Scroll Page | Find Url"]
+		},
+		"google": {
+			"scrollPage": ["Google Jobs | Job Location and Company Name Fix"]
+		}
+	},
+	"filters": {
+		"indeed": {
+			"viewjobPage": {
+				"urlPattern": "*://*.indeed.*/viewjob*",
+				"selectors": {
+					"jobTitle": ".jobsearch-JobInfoHeader-title",
+					"companyName": "[data-testid='inlineHeader-companyName']",
+					"location": "#jobLocationText",
+					"jobDescription": "#jobDescriptionText"
+				}
+			},
+			"scrollPage": {
+				"urlPattern": "*://*.indeed.*",
+				"selectors": {
+					"jobTitle": ".jobsearch-JobInfoHeader-title",
+					"companyName": "[data-testid='inlineHeader-companyName']",
+					"location": ["[data-testid='job-location']", "[data-testid='inlineHeader-companyLocation']"],
+					"jobDescription": "#jobDescriptionText"
+				}
+			}
+		},
+		"jobbank": {
+			"jobDetailsPage": {
+				"urlPattern": "*://*.jobbank.gc.ca/jobsearch/jobposting*",
+				"selectors": {
+					"jobTitle": "#wb-cont span[property='title']",
+					"companyName": "[property='joblocation']",
+					"location": "[property='hiringOrganization']",
+					"jobDescription": ".job-posting-detail-requirements",
+					"postingReference": "ul.job-posting-brief li:last-child > span:last-child"
+				}
+			}
+		},
+		"monster": {
+			"jobDetailsPage": {
+				"urlPattern": "*://*.monster.*/job-openings*",
+				"selectors": {
+					"jobTitle": "[class^='header-style__JobViewHeaderJobName-']",
+					"companyName": "[class^='header-style__JobViewHeaderCompanyName-']",
+					"location": "[class^='header-style__JobViewHeaderDetails-'] [data-testid='jobDetailLocation']",
+					"jobDescription": "[class^='description-styles__DescriptionContainerOuter-']"
+				}
+			},
+			"scrollPage": {
+				"urlPattern": "*://*.monster.*/jobs*",
+				"selectors": {
+					"jobTitle": "[class^='header-style__JobViewHeaderJobName-']",
+					"companyName": "[class^='header-style__JobViewHeaderCompanyName-']",
+					"location": "[class^='header-style__JobViewHeaderDetails-'] [data-testid='jobDetailLocation']",
+					"jobDescription": "[class^='description-styles__DescriptionContainerOuter-']"
+				}
+			}
+		},
+		"linkedin": {
+			"scrollPage": {
+				"urlPattern": "*://*.linkedin.*/jobs*",
+				"selectors": {
+					"jobTitle": ".job-details-jobs-unified-top-card__job-title",
+					"companyName": ".job-details-jobs-unified-top-card__company-name",
+					"location": ".job-details-jobs-unified-top-card__primary-description-container .t-black--light.mt2 span.tvm__text.tvm__text--low-emphasis",
+					"jobDescription": ".jobs-description-content__text div",
+					"url": ".job-details-jobs-unified-top-card__job-title--with-margin .ember-view"
+				}
+			}
+		},
+		"simplyhired": {
+			"jobDetailsPage": {
+				"urlPattern": "*://*.simplyhired.*/job*",
+				"selectors": {
+					"jobTitle": "[data-testid='viewJobTitle']",
+					"companyName": "[data-testid='viewJobCompanyName'] [data-testid='detailText']",
+					"location": "[data-testid='viewJobCompanyLocation'] [data-testid='detailText']",
+					"jobDescription": "[data-testid='viewJobBodyJobFullDescriptionContent']"
+				}
+			},
+			"searchScrollPage": {
+				"urlPattern": "*://*.simplyhired.*/search*",
+				"selectors": {
+					"jobTitle": "[data-testid='viewJobTitle']",
+					"companyName": "[data-testid='viewJobCompanyName'] [data-testid='detailText']",
+					"location": "[data-testid='viewJobCompanyLocation'] [data-testid='detailText']",
+					"jobDescription": "[data-testid='viewJobBodyJobFullDescriptionContent']"
+				}
+			},
+			"scrollPage": {
+				"urlPattern": "*://*.simplyhired.*",
+				"selectors": {
+					"jobTitle": "[data-testid='viewJobHeadingContainer'] [data-testid='viewJobTitle']",
+					"companyName": "[data-testid='viewJobHeadingContainer'] [data-testid='viewJobCompanyDetailsContainer'] [data-testid='viewJobCompanyName'] [data-testid='detailText']",
+					"location": "[data-testid='viewJobHeadingContainer'] [data-testid='viewJobCompanyDetailsContainer'] [data-testid='viewJobCompanyLocation'] [data-testid='detailText']",
+					"jobDescription": "[data-testid='viewJobBodyJobFullDescriptionContent']"
+				}
+			}
+		},
+		"google": {
+			"scrollPage": {
+				"urlPattern": "*://*.google.*/search?q=*job*",
+				"selectors": {
+					"jobTitle": "[data-viewer-id='jobs-detail-viewer'] .AQyBn > div:not([aria-hidden='true']) h1.LZAQDf.cS4Vcb-pGL6qe-IRrXtf",
+					"companyName": "[data-viewer-id='jobs-detail-viewer'] .AQyBn > div:not([aria-hidden='true']) div.waQ7qe.cS4Vcb-pGL6qe-ysgGef",
+					"location": "[data-viewer-id='jobs-detail-viewer'] .AQyBn > div:not([aria-hidden='true']) div.waQ7qe.cS4Vcb-pGL6qe-ysgGef",
+					"jobDescription": "[data-viewer-id='jobs-detail-viewer'] .AQyBn > div:not([aria-hidden='true']) span.hkXmid"
+				}
+			}
+		}
+	}
+}
